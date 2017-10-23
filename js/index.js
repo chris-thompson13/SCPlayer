@@ -110,7 +110,7 @@ function search() {
 
       list.innerHTML = ""
       for (i = 0; i < tracks.length; i++) {
-        list.innerHTML += ("<ul class = 'largerDiv'><div class = 'songList' style='background-image: url(" + tracks[i].artwork_url + ")'><div class='small'></div><button class = 'playIn'  onclick = 'playNew(this.id)' class = 'list' id = '" + tracks[i].id + "'></button></div><button onclick = 'playNew(this.id)' class = 'list' id = '" + tracks[i].id + "'>" + tracks[i].title + "</button><a href = '" + tracks[i].user.permalink_url + "' target='_blank'>---" + tracks[i].user.username + "---</a><a href = '" + tracks[i].permalink_url + "'target='_blank'>---see on soundcloud---</a></ul>");
+        list.innerHTML += ("<ul class = 'largerDiv'><div class = 'songList' style='background-image: url(" + tracks[i].artwork_url + ")'><div class='small'></div><button class = 'playIn'  onclick = 'playNew(this.id)' class = 'list' id = '" + tracks[i].id + "'></button></div><button onclick = 'playNew(this.id)' class = 'list' id = '" + tracks[i].id + "'>" + tracks[i].title + "  genre --" + tracks[i].genre+ "</button><a href = '" + tracks[i].user.permalink_url + "' target='_blank'>---" + tracks[i].user.username + "---</a><a href = '" + tracks[i].permalink_url + "'target='_blank'>---see on soundcloud---</a></ul>");
 
         songArray.push({
           name: tracks[i].title,
