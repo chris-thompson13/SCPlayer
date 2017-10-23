@@ -1,0 +1,241 @@
+button {
+  background-color: white;
+  height:100px;
+  width:100px;
+  border-radius: 100px;
+
+}
+
+body {
+  background-image: url("https://static.pexels.com/photos/262669/pexels-photo-262669.jpeg");
+  background-size: cover;
+  height: 900px;
+  /* <------ */
+  background-repeat: repeat;
+  background-position: center center;
+}
+
+.song{
+  display: block;
+}
+img{
+  display:block;
+}
+.largerDiv{
+  width:700px;
+  height: 200px;
+}
+.songList{
+  display:inline-block;
+  text-align: center;
+
+  height: 100px;
+  width: 100px;
+  border-radius: 100%;
+  margin: 0 auto;
+
+  background-size: cover;
+  /* <------ */
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+
+.list {
+  color: white;
+  font-size: 20px;
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-width: 3px;
+  border-color: #ffb4a5;
+  border-radius: 50px;
+  height: 70px;
+  width:80%;
+  margin: 0 auto;
+}
+.small{
+  height:70px;
+}
+
+.playIn{
+  height: 20px;
+  width: 20px;
+  margin: 0 auto;
+  margin-top: 50px;
+  vertical-align: middle;
+  border-radius: 100px;
+  transition: border .5s ease-in-out;
+  background-color: rgba(0, 242, 255, 1);
+  background-image: url("https://cdn0.iconfinder.com/data/icons/glyphpack/34/play-circle-full-128.png");
+  background-size: cover;
+  /* <------ */
+  background-repeat: no-repeat;
+  background-position: center center;
+  font-size: 30px;
+  font-weight: bolder;
+  box-sizing: content-box;
+  color: white;
+  vertical-align: middle;
+  display: block;
+  border-style: solid;
+  margin: 0 auto;
+  outline: none;
+  border-color: white;
+  border-width: 2px;
+  border-radius: 100%;
+}
+
+#list{
+
+  background-color: rgba(255, 255, 255, 0.02);
+
+}
+
+.list2 {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.0);
+  border-width: 0px;
+  border-radius: 50px;
+  font-size: 20px;
+  font-style: italic;
+  font-weight: bolder;
+  display: inline-block;
+  animation: select 5s ease infinite;
+}
+@keyframes select {
+  0% {
+    background-color:  #FFEA00;
+  }
+  25% {
+        background-color: #00E676;
+  }
+  50% {
+    font-size: 26px;
+        background-color: #FF1744;
+    transform: translateY(-20px)
+
+  }
+  75% {
+        background-color: #00B0FF;
+  }
+  100% {
+        background-color: #FFEA00;
+  }
+}
+
+.navButton {
+  height: 100px;
+  width: 90px;
+  border-radius: 100px;
+  transition: border .5s ease-in-out;
+  background-color: rgba(0, 242, 255, 1);
+  background-image: url("https://cdn0.iconfinder.com/data/icons/glyphpack/34/play-circle-full-128.png");
+  background-size: cover;
+  /* <------ */
+  background-repeat: no-repeat;
+  background-position: center center;
+  font-size: 30px;
+  font-weight: bolder;
+  box-sizing: content-box;
+  color: white;
+  vertical-align: middle;
+  display: inline-block;
+  border-style: solid;
+  margin: 0 auto;
+  outline: none;
+  border-color: white;
+  border-width: 5px;
+}
+.song{
+  display:inline-block;
+}
+
+.spacer{
+  display: block;
+  height: 200px;
+}
+
+.search {
+  height: 50px;
+  width: 50px;
+  border-radius: 100px;
+  transition: border .5s ease-in-out;
+  background-color: rgba(0, 242, 255, 1);
+  background-image: url("http://dryicons.com/uploads/icon/svg/4178/search.svg");
+  background-size: cover;
+  /* <------ */
+  background-repeat: no-repeat;
+  background-position: center center;
+  font-size: 30px;
+  font-weight: bolder;
+  box-sizing: content-box;
+  color: white;
+  vertical-align: middle;
+  display: inline-block;
+  border-style: solid;
+  margin: 0 auto;
+  outline: none;
+  border-color: white;
+  border-width: 5px;
+}
+
+.pause {
+  height: 100px;
+  width: 100px;
+  border-radius: 100px;
+
+  transition: border .5s ease-in-out;
+  background-color: rgba(0, 242, 255, .8);
+  background-image: url("https://cdn3.iconfinder.com/data/icons/eightyshades/512/25_Pause-256.png");
+  background-size: cover;
+  /* <------ */
+  background-repeat: no-repeat;
+  background-position: center center;
+  font-size: 30px;
+  font-weight: bolder;
+  box-sizing: content-box;
+  color: white;
+  vertical-align: middle;
+  display: inline-block;
+  border-style: solid;
+  margin: 0 auto;
+  outline: none;
+  border-color: white;
+  border-width: 5px;
+  animation: rotate 5s infinite;
+}
+
+.upperHead{
+  display:block;
+}
+
+input{
+  width: 75%;
+  height:55px;
+  background-color: rgba(0, 0, 0, 0.68);
+  border-radius: 20px;
+  color:white;
+  font-size: 20px;
+  text-align: center;
+}
+
+.head {
+  background-color: rgba(0, 0, 0, 0.68);
+  text-align: center;
+  width: 100%;
+  position: fixed;
+  padding: 10px 0;
+}
+
+
+
+@keyframes rotate {
+  50% {}
+  100% {
+    -ms-transform: rotate(360deg);
+    /* IE 9 */
+    -webkit-transform: rotate(360deg);
+    /* Chrome, Safari, Opera */
+    transform: rotate(360deg);
+  }
+}
