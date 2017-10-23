@@ -11,7 +11,7 @@ var player = document.getElementById('player')
 var songArray = [{}];
 var firstTrack;
 var id = 290;
-var noInput = 'go'
+var noInput = "don't let me fall";
 var firstPlay = false;
 // stream track id 293
 
@@ -93,6 +93,7 @@ if (firstPlay == true){
 }
 }
 function search() {
+  songName = document.getElementById('songSearch').value;
   if (songName == ""){
     firstPlay = true
     songArray = [];
@@ -100,7 +101,7 @@ function search() {
     console.log(songName)
 
     SC.get('/tracks', {
-      q: songName,
+      q: noInput,
       limit: 20
     }).then(function(tracks) {
       songs = tracks
@@ -128,7 +129,7 @@ function search() {
     console.log(noInput)
 
     SC.get('/tracks', {
-      q: noInput,
+      q: songName,
       limit: 20
     }).then(function(tracks) {
       songs = tracks
@@ -173,3 +174,5 @@ function pause() {
 
   }
 }
+
+search()
