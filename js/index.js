@@ -11,6 +11,7 @@ var player = document.getElementById('player')
 var songArray = [{}];
 var firstTrack;
 var id = 290;
+var noInput = 'go'
 var firstPlay = false;
 // stream track id 293
 
@@ -92,33 +93,64 @@ if (firstPlay == true){
 }
 }
 function search() {
-  firstPlay = true
-  songArray = [];
-  songName = document.getElementById('songSearch').value;
-  console.log(songName)
+  if (songName == ""){
+    firstPlay = true
+    songArray = [];
+    songName = document.getElementById('songSearch').value;
+    console.log(songName)
 
-  SC.get('/tracks', {
-    q: songName,
-    limit: 20
-  }).then(function(tracks) {
-    songs = tracks
-    firstTrack = tracks[0]
-    id = firstTrack.id
+    SC.get('/tracks', {
+      q: songName,
+      limit: 20
+    }).then(function(tracks) {
+      songs = tracks
+      firstTrack = tracks[0]
+      id = firstTrack.id
 
-    list.innerHTML = ""
-    for (i = 0; i < tracks.length; i++) {
-      list.innerHTML += "<ul class = 'largerDiv'><div class = 'songList' style='background-image: url(" + tracks[i].artwork_url + ")'><div class='small'></div><button class = 'playIn' onclick = 'playNew(this.id)' class = 'list' id = '" + tracks[i].id + "'></button></div><button onclick = 'playNew(this.id)' class = 'list' id = '" + tracks[i].id + "'>" + tracks[i].title + "</button></ul>";
+      list.innerHTML = ""
+      for (i = 0; i < tracks.length; i++) {
+        list.innerHTML += "<ul class = 'largerDiv'><div class = 'songList' style='background-image: url(" + tracks[i].artwork_url + ")'><div class='small'></div><button class = 'playIn' onclick = 'playNew(this.id)' class = 'list' id = '" + tracks[i].id + "'></button></div><button onclick = 'playNew(this.id)' class = 'list' id = '" + tracks[i].id + "'>" + tracks[i].title + "</button></ul>";
 
-      songArray.push({
-        name: tracks[i].title,
-        id: tracks[i].id
-      })
-      console.log(tracks[i]);
-      playNew()
-    }
+        songArray.push({
+          name: tracks[i].title,
+          id: tracks[i].id
+        })
+        console.log(tracks[i]);
+        playNew()
+      }
 
 
-  });
+    });
+  } else{
+    firstPlay = true
+    songArray = [];
+    songName = document.getElementById('songSearch').value;
+    console.log(noInput)
+
+    SC.get('/tracks', {
+      q: noInput,
+      limit: 20
+    }).then(function(tracks) {
+      songs = tracks
+      firstTrack = tracks[0]
+      id = firstTrack.id
+
+      list.innerHTML = ""
+      for (i = 0; i < tracks.length; i++) {
+        list.innerHTML += "<ul class = 'largerDiv'><div class = 'songList' style='background-image: url(" + tracks[i].artwork_url + ")'><div class='small'></div><button class = 'playIn' onclick = 'playNew(this.id)' class = 'list' id = '" + tracks[i].id + "'></button></div><button onclick = 'playNew(this.id)' class = 'list' id = '" + tracks[i].id + "'>" + tracks[i].title + "</button></ul>";
+
+        songArray.push({
+          name: tracks[i].title,
+          id: tracks[i].id
+        })
+        console.log(tracks[i]);
+        playNew()
+      }
+
+
+    });
+  }
+
 }
 
 function pause() {
